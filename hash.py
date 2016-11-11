@@ -11,30 +11,23 @@ from readfile import read_file as read
 
 
 class Hash_table():
-    def __init__(self, readfile=False, *args):
+    def __init__(self, *args):
         self.table = [None for i in range(20)]
-
-        if readfile:
-            temparr = read('./ContactList.txt')
-        else:
-            temparr = args
-
+        temparr = read('./ContactList.txt')
         for i in temparr:
             h = self.__gethash__(i['number'])
+            i['NextContact'] = None
             if self.table[h] is None:
                 self.table[h] = i
             else:
-                """
-                ИСПРАВИТЬ
-                сейчас при возникновении коллизии элементы
-                дописываются в конец, расширяя массив
-                """
-                self.table.append(i)
+                self.table[h]['NextContact'] = i
 
     def __str__(self):
         temp = ''
+        j = 0
         for i in self.table:
-            temp += (str(i)+'\n')
+            temp += (str(j) + ': ' + str(i)+'\n')
+            j += 1
         return temp
 
     def __gethash__(self, number):
@@ -47,12 +40,6 @@ class Hash_table():
             h += int(i)
         h %= 20
         return h
-
-    class Contact:
-        def __init__(self, name, number):
-            self.name = name
-            self.number = number
-            self.nextContact = None
 
 
 a = Hash_table('456')
