@@ -41,10 +41,10 @@ Anderson 857000
 Thomas 857000
 Moore 859800
 Wilson 934200
-Miller 2168400
-Davis 3322700
-Brown 4711200
-Jones 5711200
-Williams 6926200
-Johnson 7232100
-Smith 8772200
+Miller 941684
+Davis 9522700
+Brown 9611200
+Jones 9711200
+Williams 9826200
+Johnson 9932100
+Smith 9972200

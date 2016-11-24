@@ -38,4 +38,4 @@ def is_substring(a, b):
     return True
 
 contact_list = read_file('/mnt/data/stud/aias/works/py/ContactListSorted.txt')
-print(binary_search('8772200', contact_list))
+print(binary_search('548400', contact_list))
